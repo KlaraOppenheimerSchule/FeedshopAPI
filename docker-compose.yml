@@ -1,0 +1,42 @@
+version: '3'
+
+networks:
+    feedshopAPI:
+
+services:
+    webserver:
+        image: nginx:1.19.3
+        container_name: feedshopAPI_nginx
+        ports:
+            - "80:80"
+        volumes:
+            - ./code/public:/var/www/html/public
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./logs:/var/log/nginx/
+        depends_on:
+            - php
+        networks:
+            - feedshopAPI
+
+    database:
+        image: mysql:8.0.21
+        container_name: feedshopAPI_mysqlDB
+        volumes:
+            - ./docker/sql/feedshop.sql:/docker-entrypoint-initdb.d/feedshop.sql
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=123456
+        networks:
+            - feedshopAPI
+
+    php:
+        build: ./docker/php
+        container_name: feedshopAPI_php
+        environment:
+            - APPLICATION_ENVIRONMENT=development
+        volumes:
+            - ./code:/var/www/html
+            - ./docker/php/config/php.ini:/usr/local/etc/php/php.ini
+        networks:
+            - feedshopAPI

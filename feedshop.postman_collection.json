@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "b78c5966-8594-4dc9-85f3-f58ebd511195",
+		"name": "FeedshopAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Token",
+								"value": "User 6e176cba-e137-475a-b3b4-c199b6ta756x",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Christoph\",\r\n    \"lastname\": \"Zobel\"\r\n}",
+							"options": {
+								"raw": {
+									"employee": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "API-Token",
+								"value": "User 6e176cba-e137-475a-b3b4-c199b6ta756x",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"firstname\": \"Klaus\",\r\n    \"lastname\": \"Mueller\" \r\n}",
+							"options": {
+								"raw": {
+									"employee": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Employees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "User 6e176cba-e137-475a-b3b4-c199b6ta756x",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"german\"\r\n}",
+							"options": {
+								"raw": {
+									"employee": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Token",
+								"value": "User 6e176cba-e137-475a-b3b4-c199b6ta756x",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"german\"\r\n}",
+							"options": {
+								"raw": {
+									"employee": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/employee/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"employee",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "API-Token",
+								"value": "User 6e176cba-e137-475a-b3b4-c199b6ta756x",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"german\"\r\n}",
+							"options": {
+								"raw": {
+									"employee": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/employee/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"employee",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "API-Token",
+						"value": "User 6e176cba-e137-475a-b3b4-c199b6ta756x",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/hello/:name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"hello",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

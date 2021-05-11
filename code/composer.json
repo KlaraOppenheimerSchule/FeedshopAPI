@@ -1,0 +1,19 @@
+{
+    "autoload": {
+        "classmap": [
+            "src/",
+            "test/"
+        ],
+        "psr-4": {
+            "feedshop\\": "src/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "require": {
+        "ext-mbstring": "^7.3",
+        "ext-pdo": "*",
+        "ext-json": "*"
+    }
+}
